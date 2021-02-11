@@ -152,6 +152,7 @@ Transform:
   - {fileID: 1352418656}
   - {fileID: 1245549146}
   - {fileID: 1842004517}
+  - {fileID: 1051087219}
   m_Father: {fileID: 1686344760}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -120512,6 +120513,11 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[3].y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4691332085822845703, guid: 1d096467bd11505479937aff780e5cd2,
+        type: 3}
+      propertyPath: isGameComplete
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4691332085947852944, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_IsActive
@@ -120560,7 +120566,7 @@ PrefabInstance:
     - target: {fileID: 4691332086608218244, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.8032789
+      value: 2.6327572
       objectReference: {fileID: 0}
     - target: {fileID: 4691332086608218244, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
@@ -120724,8 +120730,8 @@ Transform:
   - {fileID: 864583229}
   - {fileID: 2107858092}
   - {fileID: 2139960606}
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_Father: {fileID: 17723992}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &1051087220
 AudioSource:
