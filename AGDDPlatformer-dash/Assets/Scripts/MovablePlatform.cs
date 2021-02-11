@@ -9,7 +9,8 @@ public class MovablePlatform : MonoBehaviour
     
     private Vector3 _initialPosition;
     private Vector3 _targetPosition;
-    private bool _moveTowards = true; // true = target, false = _initialPosition
+    private bool _moveTowards = true; // true = target
+                                      // false = _initialPosition
 
 
     private void Start()

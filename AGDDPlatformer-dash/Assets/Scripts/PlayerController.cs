@@ -4,15 +4,21 @@ namespace AGDDPlatformer
 {
     public class PlayerController : KinematicObject
     {
-        [Header("Movement")]
-        public float maxSpeed = 7;
+        [Header("Movement")] public float maxSpeed = 7;
         public float jumpSpeed = 7;
-        public float jumpDeceleration = 0.5f; // Upwards slow after releasing jump button
-        public float cayoteTime = 0.1f; // Lets player jump just after leaving ground
-        public float jumpBufferTime = 0.1f; // Lets the player input a jump just before becoming grounded
 
-        [Header("Dash")]
-        public float dashSpeed;
+        public float
+            jumpDeceleration =
+                0.5f; // Upwards slow after releasing jump button
+
+        public float
+            cayoteTime = 0.1f; // Lets player jump just after leaving ground
+
+        public float
+            jumpBufferTime =
+                0.1f; // Lets the player input a jump just before becoming grounded
+
+        [Header("Dash")] public float dashSpeed;
         public float dashTime;
         public float dashCooldown;
         public Color canDashColor;
@@ -23,8 +29,7 @@ namespace AGDDPlatformer
         bool canDash;
         bool wantsToDash;
 
-        [Header("Audio")]
-        public AudioSource source;
+        [Header("Audio")] public AudioSource source;
         public AudioClip jumpSound;
         public AudioClip dashSound;
 
@@ -84,8 +89,11 @@ namespace AGDDPlatformer
             if (desiredDashDirection == Vector2.zero)
             {
                 // Dash in facing direction if there is no directional input;
-                desiredDashDirection = spriteRenderer.flipX ? -Vector2.right : Vector2.right;
+                desiredDashDirection = spriteRenderer.flipX
+                    ? -Vector2.right
+                    : Vector2.right;
             }
+
             desiredDashDirection = desiredDashDirection.normalized;
             if (Input.GetButtonDown("Dash"))
             {
@@ -104,6 +112,7 @@ namespace AGDDPlatformer
 
                 source.PlayOneShot(dashSound);
             }
+
             wantsToDash = false;
 
             if (isDashing)
@@ -112,7 +121,7 @@ namespace AGDDPlatformer
                 if (Time.time - lastDashTime >= dashTime)
                 {
                     isDashing = false;
-                    
+
                     gravityModifier = defaultGravityModifier;
                     if ((gravityModifier >= 0 && velocity.y > 0) ||
                         (gravityModifier < 0 && velocity.y < 0))
@@ -136,12 +145,13 @@ namespace AGDDPlatformer
                 float timeSinceJumpInput = Time.time - lastJumpTime;
                 float timeSinceLastGrounded = Time.time - lastGroundedTime;
 
-                if (canJump && timeSinceJumpInput <= jumpBufferTime && timeSinceLastGrounded <= cayoteTime)
+                if (canJump && timeSinceJumpInput <= jumpBufferTime &&
+                    timeSinceLastGrounded <= cayoteTime)
                 {
                     velocity.y = Mathf.Sign(gravityModifier) * jumpSpeed;
                     canJump = false;
                     isGrounded = false;
-                    
+
                     source.PlayOneShot(jumpSound);
                 }
                 else if (jumpReleased)
@@ -152,6 +162,7 @@ namespace AGDDPlatformer
                     {
                         velocity.y *= jumpDeceleration;
                     }
+
                     jumpReleased = false;
                 }
 
