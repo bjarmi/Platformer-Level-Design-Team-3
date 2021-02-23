@@ -26,7 +26,7 @@ namespace AGDDPlatformer
         float lastDashTime;
         Vector2 dashDirection;
         bool isDashing;
-        bool canDash;
+        public bool canDash;
         bool wantsToDash;
 
         [Header("Audio")] public AudioSource source;
