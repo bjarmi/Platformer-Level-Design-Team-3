@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEditor;
+using UnityEngine;
 
 namespace AGDDPlatformer
 {
@@ -197,6 +199,21 @@ namespace AGDDPlatformer
         public void ResetDash()
         {
             canDash = true;
+        }
+
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            if (!other.gameObject.CompareTag("Platform")) return;
+            
+            MovablePlatform script =
+                other.gameObject.GetComponent<MovablePlatform>();
+                
+            transform.position = Vector3.MoveTowards(
+                transform.position,
+                script.currentPoint.position,
+                Time.deltaTime * script.speed
+            );
+
         }
     }
 }
