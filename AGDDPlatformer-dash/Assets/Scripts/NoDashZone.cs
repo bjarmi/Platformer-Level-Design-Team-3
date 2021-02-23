@@ -12,12 +12,6 @@ public class NoDashZone : MonoBehaviour
         controller.dashAllowed = state;
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.CompareTag(playerTag))
-            SetDashPermission(other.gameObject, false);
-    }
-
     private void OnTriggerStay2D(Collider2D other)
     {
         if (other.CompareTag(playerTag))
