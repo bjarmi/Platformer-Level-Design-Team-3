@@ -11,28 +11,24 @@ namespace AGDDPlatformer
         public GameObject satisfactionIndicator;
         public AudioSource source;
 
-        void Start()
+        private void Start()
         {
             satisfactionIndicator.SetActive(false);
         }
 
-        void OnTriggerEnter2D(Collider2D other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag(playerTag))
-            {
-                isSatisfied = true;
-                satisfactionIndicator.SetActive(true);
-                source.Play();
-            }
+            if (!other.CompareTag(playerTag)) return;
+            isSatisfied = true;
+            satisfactionIndicator.SetActive(true);
+            source.Play();
         }
 
-        void OnTriggerExit2D(Collider2D other)
+        private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.CompareTag(playerTag))
-            {
-                isSatisfied = false;
-                satisfactionIndicator.SetActive(false);
-            }
+            if (!other.CompareTag(playerTag)) return;
+            isSatisfied = false;
+            satisfactionIndicator.SetActive(false);
         }
     }
 }
