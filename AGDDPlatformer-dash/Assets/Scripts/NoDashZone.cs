@@ -8,7 +8,7 @@ public class NoDashZone : MonoBehaviour
     private static void SetDashPermission(GameObject player, bool state)
     {
         PlayerController controller = player.GetComponent<PlayerController>();
-        controller.canDash = state;
+        controller.dashAllowed = state;
     }
 
     private void OnTriggerEnter2D(Collider2D player)
