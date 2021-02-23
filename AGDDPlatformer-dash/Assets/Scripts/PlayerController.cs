@@ -123,8 +123,8 @@ namespace AGDDPlatformer
                     isDashing = false;
 
                     gravityModifier = defaultGravityModifier;
-                    if ((gravityModifier >= 0 && velocity.y > 0) ||
-                        (gravityModifier < 0 && velocity.y < 0))
+                    if (gravityModifier >= 0 && velocity.y > 0
+                        || gravityModifier < 0 && velocity.y < 0)
                     {
                         velocity.y *= jumpDeceleration;
                     }
@@ -145,8 +145,8 @@ namespace AGDDPlatformer
                 float timeSinceJumpInput = Time.time - lastJumpTime;
                 float timeSinceLastGrounded = Time.time - lastGroundedTime;
 
-                if (canJump && timeSinceJumpInput <= jumpBufferTime &&
-                    timeSinceLastGrounded <= cayoteTime)
+                if (canJump && timeSinceJumpInput <= jumpBufferTime
+                            && timeSinceLastGrounded <= cayoteTime)
                 {
                     velocity.y = Mathf.Sign(gravityModifier) * jumpSpeed;
                     canJump = false;
