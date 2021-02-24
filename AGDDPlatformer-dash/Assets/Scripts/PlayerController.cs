@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEditor;
+using UnityEngine;
 
 namespace AGDDPlatformer
 {
@@ -17,6 +19,8 @@ namespace AGDDPlatformer
         public float
             jumpBufferTime =
                 0.1f; // Lets the player input a jump just before becoming grounded
+
+        public bool onPlatform = false;
 
         [Header("Dash")] public float dashSpeed;
         public float dashTime;
@@ -200,6 +204,24 @@ namespace AGDDPlatformer
         public void ResetDash()
         {
             canDash = true;
+        }
+
+        private void OnCollisionStay2D(Collision2D other)
+        {
+            if (!other.gameObject.CompareTag("Platform")) return;
+            
+            var script =
+                other.gameObject.GetComponentInParent<MovablePlatform>();
+            
+            var playerPosition = transform.position;
+            var offset = playerPosition - other.transform.position;
+            
+            playerPosition = Vector3.MoveTowards(
+                playerPosition,
+                script.currentPoint.position + offset,
+                Time.deltaTime * script.speed
+            );
+            transform.position = playerPosition;
         }
     }
 }
