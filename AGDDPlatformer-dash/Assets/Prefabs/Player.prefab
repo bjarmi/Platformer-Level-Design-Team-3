@@ -62,6 +62,8 @@ MonoBehaviour:
   dashCooldown: 0.2
   canDashColor: {r: 0.20220721, g: 0.6037736, b: 0.25083956, a: 1}
   cantDashColor: {r: 1, g: 1, b: 1, a: 1}
+  canDash: 0
+  dashAllowed: 0
   source: {fileID: 1025081731160142149}
   jumpSound: {fileID: 8300000, guid: 8b772f38bed9f394db4026482c2fb8e4, type: 3}
   dashSound: {fileID: 8300000, guid: 508c4d19d632cfd419d8e9a97ae00cac, type: 3}

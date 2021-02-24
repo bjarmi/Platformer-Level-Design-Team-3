@@ -1,26 +1,28 @@
-﻿using System;
-using AGDDPlatformer;
+﻿using AGDDPlatformer;
 using UnityEngine;
 
 public class NoDashZone : MonoBehaviour
 {
-    public string playerTag;
+    public GameObject player;
+    private PlayerController _controller;
 
-    private static void SetDashPermission(GameObject player, bool state)
+    private void Start()
     {
-        PlayerController controller = player.GetComponent<PlayerController>();
-        controller.dashAllowed = state;
+        _controller = player.GetComponent<PlayerController>();
+    }
+
+    private void SetDashPermission(bool state)
+    {
+        _controller.dashAllowed = state;
     }
 
     private void OnTriggerStay2D(Collider2D other)
     {
-        if (other.CompareTag(playerTag))
-            SetDashPermission(other.gameObject, false);
+        SetDashPermission(false);
     }
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if (other.CompareTag(playerTag))
-            SetDashPermission(other.gameObject, true);
+        SetDashPermission(true);
     }
 }
