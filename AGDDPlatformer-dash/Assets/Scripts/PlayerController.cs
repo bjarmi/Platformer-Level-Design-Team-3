@@ -206,14 +206,19 @@ namespace AGDDPlatformer
         private void OnCollisionStay2D(Collision2D other)
         {
             if (!other.gameObject.CompareTag("Platform")) return;
+            
             var script =
                 other.gameObject.GetComponentInParent<MovablePlatform>();
             
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                script.currentPoint.position,
+            var playerPosition = transform.position;
+            var ofset = playerPosition - other.transform.position;
+            
+            playerPosition = Vector3.MoveTowards(
+                playerPosition,
+                script.currentPoint.position + ofset,
                 Time.deltaTime * script.speed
             );
+            transform.position = playerPosition;
         }
     }
 }
