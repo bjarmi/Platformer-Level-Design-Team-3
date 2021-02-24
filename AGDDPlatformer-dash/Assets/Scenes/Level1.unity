@@ -120558,6 +120558,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2653386272220273286, guid: 1d096467bd11505479937aff780e5cd2,
+        type: 3}
+      propertyPath: dashAllowed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2748415490154733537, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_Color.b
