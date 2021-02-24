@@ -16,7 +16,7 @@ public class NoDashZone : MonoBehaviour
         _controller.dashAllowed = state;
     }
 
-    private void OnTriggerStay2D(Collider2D other)
+    private void OnTriggerEnter2D(Collider2D other)
     {
         SetDashPermission(false);
     }
