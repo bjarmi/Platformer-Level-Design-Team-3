@@ -30,7 +30,8 @@ namespace AGDDPlatformer
         float lastDashTime;
         Vector2 dashDirection;
         bool isDashing;
-        bool canDash;
+        public bool canDash;
+        public bool dashAllowed = true;
         bool wantsToDash;
 
         [Header("Audio")] public AudioSource source;
@@ -106,7 +107,9 @@ namespace AGDDPlatformer
 
             /* --- Compute Velocity --- */
 
-            if (canDash && wantsToDash)
+            if (canDash 
+                && wantsToDash 
+                && dashAllowed)
             {
                 isDashing = true;
                 dashDirection = desiredDashDirection;
