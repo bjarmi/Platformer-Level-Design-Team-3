@@ -20,6 +20,8 @@ namespace AGDDPlatformer
             jumpBufferTime =
                 0.1f; // Lets the player input a jump just before becoming grounded
 
+        public bool onPlatform = false;
+
         [Header("Dash")] public float dashSpeed;
         public float dashTime;
         public float dashCooldown;
@@ -204,16 +206,14 @@ namespace AGDDPlatformer
         private void OnCollisionStay2D(Collision2D other)
         {
             if (!other.gameObject.CompareTag("Platform")) return;
+            var script =
+                other.gameObject.GetComponentInParent<MovablePlatform>();
             
-            MovablePlatform script =
-                other.gameObject.GetComponent<MovablePlatform>();
-                
             transform.position = Vector3.MoveTowards(
                 transform.position,
                 script.currentPoint.position,
                 Time.deltaTime * script.speed
             );
-
         }
     }
 }
