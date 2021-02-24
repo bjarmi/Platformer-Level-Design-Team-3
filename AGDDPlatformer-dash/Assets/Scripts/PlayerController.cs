@@ -211,11 +211,11 @@ namespace AGDDPlatformer
                 other.gameObject.GetComponentInParent<MovablePlatform>();
             
             var playerPosition = transform.position;
-            var ofset = playerPosition - other.transform.position;
+            var offset = playerPosition - other.transform.position;
             
             playerPosition = Vector3.MoveTowards(
                 playerPosition,
-                script.currentPoint.position + ofset,
+                script.currentPoint.position + offset,
                 Time.deltaTime * script.speed
             );
             transform.position = playerPosition;
