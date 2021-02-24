@@ -120611,7 +120611,7 @@ PrefabInstance:
     - target: {fileID: 4691332085822845703, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: nextLevel
-      value: Level 5
+      value: Level 4
       objectReference: {fileID: 0}
     - target: {fileID: 4691332085822845703, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
@@ -120646,7 +120646,7 @@ PrefabInstance:
     - target: {fileID: 4691332086602504074, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.6399999
+      value: 0.43999997
       objectReference: {fileID: 0}
     - target: {fileID: 4691332086608218235, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
@@ -120776,8 +120776,13 @@ PrefabInstance:
     - target: {fileID: 7886308783601118933, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.6399999
+      value: 0.44
       objectReference: {fileID: 0}
+    - target: {fileID: 9019109077228661966, guid: 1d096467bd11505479937aff780e5cd2,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 00bca1b91ffe9a845959e46d3812cf04, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d096467bd11505479937aff780e5cd2, type: 3}
 --- !u!1 &1363718050
