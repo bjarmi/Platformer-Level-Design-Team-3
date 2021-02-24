@@ -299,6 +299,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2653386272220273286, guid: 1d096467bd11505479937aff780e5cd2,
+        type: 3}
+      propertyPath: dashAllowed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4691332085472185387, guid: 1d096467bd11505479937aff780e5cd2,
         type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
@@ -543,6 +548,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 4765671665924690213}
     m_Modifications:
+    - target: {fileID: 841887992138806013, guid: 3f8e3292657c046b89e6015538774b48,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.08
+      objectReference: {fileID: 0}
     - target: {fileID: 841887993027964555, guid: 3f8e3292657c046b89e6015538774b48,
         type: 3}
       propertyPath: m_Name
@@ -556,12 +566,12 @@ PrefabInstance:
     - target: {fileID: 841887993642957574, guid: 3f8e3292657c046b89e6015538774b48,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 4.91
       objectReference: {fileID: 0}
     - target: {fileID: 841887993642957574, guid: 3f8e3292657c046b89e6015538774b48,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.26
       objectReference: {fileID: 0}
     - target: {fileID: 841887993642957574, guid: 3f8e3292657c046b89e6015538774b48,
         type: 3}
